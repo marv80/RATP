@@ -5,7 +5,7 @@ Transport App Project using RATP Api and data
 
 After deciding on our project, the next step that came naturally was the choice of the method that we wanted to implement and how to use it in order to solve it.
 
-To be able to solve the problem, we actually have to know our problem and what we can be able to implement in the time that we have. (like Sun-Tzu would say in the art of war, “If you know the enemy and know yourself, you need not fear the result of a hundred battles. If you know yourself but not the enemy, for every victory gained you will also suffer a defeat. If you know neither the enemy nor yourself, you will succumb in every battle.”friend but know your enemy better) and that’s the way we’re going to process during this project.
+To be able to solve the problem, we actually have to know our problem and what we can be able to implement in the time that we have.(like Sun-Tzu has said in the art of war : “If you know the enemy and know yourself, you need not fear the result of a hundred battles. If you know yourself but not the enemy, for every victory gained you will also suffer a defeat. If you know neither the enemy nor yourself, you will succumb in every battle.”) and that’s the way we’re going to process during this project.
 
 
 First of all, the context:
