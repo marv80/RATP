@@ -49,11 +49,12 @@ To define.
 
 ## Versioning
 
+## Comments 
 
+Please go to the wiki page for more details on the project. 
 
 ## Authors
 
-- **Marvin**
-- **Naïrah**
-- *ESILV Students*
+- **Marvin & Naïrah, ESILV Students**
+
 
