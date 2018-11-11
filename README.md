@@ -43,9 +43,12 @@ For now we're thinking about using a raspberry pi as the server.
 
 ## Built With
 
-To define. 
+Pycharm from Jetbrains using python 3.4. 
 
-## Versioning
+![interface_v1](http://www.upidev.com/wp-content/uploads/2018/07/logo.png
+)
+
+
 
 ## Comments 
 
