@@ -1,23 +1,29 @@
-import sys;
-class Node:
+# Definition of the class stops which a represent a bus,tram,metro,train stop
+class Stop:
+
+    def __init__(self, tchangement):
+        # tchangement might replace F footpath when in the same station
+        self.tchangement = tchangement
 
 
-class Verticle:
-
-    def __init__(self,name):
-        self.name=name;
-        self.visited = False;
-        self.predecessor = Node;
-        self.predecessor = None;
-        self.adjenciesList = [];
-        self.minDistance = sys.macsize;
+class Trajet:
+    def __init__(self, tdepart, thdepart, tarrivee, tharrivee):
+        self.depart = tdepart
+        self.arrivee = tarrivee
+        self.hdepart = thdepart
+        self.harrivee = tharrivee
+        self.stops = []
 
 
-
-class Graph:
+class Rounds:
     def __init__(self):
-        self.nodes = set()
-        self.edges = defaultdict(list)
-        self.distances = {}
+        pass
 
-        def add
+
+class Journey:
+    def __init__(self, jdepart, jhdepart):
+        self.trajet = []
+        self.depart = jdepart
+        self.arrivee = float("inf")
+        self.depart = jhdepart
+
