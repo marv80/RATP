@@ -1,5 +1,4 @@
 route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
-1025209,100,"292","(PORTE DE L'ESSONNE <-> (ATHIS-MONS - PORTE DE L'ESSONNE)) - Retour",,3,,FFFFFF,000000
 111,100,"s1","Line S1",,1,,,FFFFFF,000000
 222,100,"s2","Line S2",,1,,,F5F5DC,000000 
 333,100,"s3","Line S3",,1,,,556B2F,000000
