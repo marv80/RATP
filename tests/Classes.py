@@ -6,9 +6,9 @@ class Stop:
         self.nomstop = nomstop  # Stop name
         self.latstop = latstop  # Latitude stop
         self.longstop = longstop    # Longitude stop
-        self.sroutes = []   # Routes serving the stop
-        self.nbsroutes = [] # Order of the stop in the Route use "{}" ?
-        self.stransferts = []
+        self.sroutes = list()   # Routes serving the stop
+        self.nbsroutes = list()  # Order of the stop in the Route use "{}" ?
+        self.stransferts = list()
 
 
 class Trip:
@@ -18,8 +18,8 @@ class Trip:
         self.arrivee = tarrive
         self.hdepart = thdepart
         self.harrivee = tharrive
-        self.tstops = []
-        self.jtrips = []
+        self.tstops = list()
+        self.jtrips = list()
 
 
 class Rounds:
@@ -29,11 +29,11 @@ class Rounds:
 
 class Journey:
     def __init__(self, jdepart, jhdepart):
-        self.jtrips = []
+        self.jtrips = list()
         self.depart = jdepart
         self.arrivee = float("inf")
         self.depart = jhdepart
-        self.transferts = []
+        self.transferts = list()
         self.PickUpS = {}
         self.DropOffS = {}
 
@@ -47,8 +47,8 @@ class Journey:
 class Route:
     def __init__(self, idroute, rname, rshortname):
         self.id = idroute
-        self. rstops = []
-        self.rtrips = []
+        self. rstops = list()
+        self.rtrips = list()
         self.rname = rname
         self.rshortname = rshortname
 
@@ -65,15 +65,8 @@ class Transfert:
         self.depart = tdepart
         self.arrive = tarrive
 
-
-
-
-
-
-
-
-
-
-
-
-
+#class earliestarrivalproblem:
+ #   def __init__(self):
+    #self.eapraptor =  None
+    #self.timetable = None
+    #results = list()

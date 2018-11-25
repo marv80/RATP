@@ -8,7 +8,7 @@ stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,location_type,parent_sta
 7,,"La Varenne","Place de la Varenne ",48.79493354483859,2.5130447577249475,0,
 8,," Césaire ","Rue du Bac ",48.8897381077178,2.339149086674118,0,
 9,,"Laumière","av. Jean Jaurès ",48.8849316105461,2.379091246899838,0,
-10,,"Le Kremlin-Bicêtre","Hôpital Kremlin Bicêtre - 94043",48.810385125129486,2.3618306830911315,0,
+10,,"Le Kremlin-Bicêtre","Hôpital Kremlin Bicêtre ",48.810385125129486,2.3618306830911315,0,
 11,,"Jean Monnet","Place Jean Monnet ",48.85549704826123,2.7736084332189748,0,
 12,,"Val des Landes","Place du Val ",48.85549704826123,2.7736084332189748,0,
 13,,"Villepinte","Rue de Villepinte",48.96316755011165,2.5123878278590865,0,
