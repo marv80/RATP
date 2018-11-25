@@ -1,5 +1,3 @@
-from . import Classes
-
 class Raptor:
     def __init__(self):
         self.round = range(10)
