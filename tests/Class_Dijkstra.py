@@ -15,6 +15,3 @@ class Graph():
         self.edges[start_vertex].append(end_vertex)  #add an element from start_vertex to end_vertex
         self.edges[start_vertex].append(end_vertex)
         self.distances[(start_vertex, end_vertex)] = distance
-
-    def print_data(self, start_vertex, end_vertex, distance):
-        print("Here is the shortest path:", start_vertex, end_vertex, "with distance: ", distance)
