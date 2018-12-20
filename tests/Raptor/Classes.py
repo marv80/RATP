@@ -1,4 +1,6 @@
 # Definition of the class stops which a represent a bus,tram,metro,train stop
+import pandas as pd
+
 class Stop:
 
     def __init__(self, idstop, nomstop, latstop, longstop):
@@ -7,7 +9,7 @@ class Stop:
         self.latstop = latstop  # Latitude stop
         self.longstop = longstop    # Longitude stop
         self.sroutes = list()   # Routes serving the stop
-        self.nbsroutes = list()  # Order of the stop in the Route use "{}" ?
+     #  self.nbsroutes = list()  # Order of the stop in the Route use "{}" ?
         self.stransferts = list()
 
 
@@ -64,6 +66,22 @@ class Transfert:
         self.time = ttime
         self.depart = tdepart
         self.arrive = tarrive
+
+class Timetable:
+    def __init__(self, ttdtime):
+        self.ttdtime = ttdtime
+        self.ttroute = {}
+        self.ttstops = ()
+
+    def liststops(self, data_stops, data_routes):
+        for index, row in data_stops.iterrows():
+            stop = None
+            stop.idstop = row[0]
+            stop.latstop = row[4]
+            stop.longstop = row[5]
+            stop.nomstop = row[2]
+            self.ttstops.append(stop)
+
 
 #class earliestarrivalproblem:
  #   def __init__(self):
