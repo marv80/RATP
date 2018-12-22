@@ -1,0 +1,13 @@
+import pandas as pd
+import Classes
+
+def main():
+    data_routes = pd.read_csv('data/routes.txt', sep=",", header=0)
+    data_stops = pd.read_csv('data/stops.txt', sep=",", header=0)
+
+    for i in range(25):
+        print(tim.ttstops[i].nomstop)
+
+if __name__ == "__main__":
+    # execute only if run as a script
+    main()
