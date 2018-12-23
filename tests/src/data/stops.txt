@@ -1,0 +1,31 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,location_type,parent_station
+1,,"Olympiades","Rue Hercules ",48.82694828196076,2.367038433387592,0, 
+2,,"La Défense ","Rue des soldats ",48.89200565400341,2.2369831238174327,0,
+3,,"La Hacquinière","Avenue des Tilleuls ",48.69506073208291,2.1526641367708073,0,
+4,,"La Motte-Picquet-Grenelle","Rue de Grenelle ",48.84882126668606,2.2979529640251917,0,
+5,,"La Muette","5 avenue Mozart ",48.85809504968323,2.274096448110612,0,
+6,,"Bellevue "," Rue Haute ",48.918116641116775,2.3626045185666085,0,
+7,,"La Varenne","Place de la Varenne ",48.79493354483859,2.5130447577249475,0,
+8,," Césaire ","Rue du Bac ",48.8897381077178,2.339149086674118,0,
+9,,"Laumière","av. Jean Jaurès ",48.8849316105461,2.379091246899838,0,
+10,,"Le Kremlin-Bicêtre","Hôpital Kremlin Bicêtre ",48.810385125129486,2.3618306830911315,0,
+11,,"Jean Monnet","Place Jean Monnet ",48.85549704826123,2.7736084332189748,0,
+12,,"Val des Landes","Place du Val ",48.85549704826123,2.7736084332189748,0,
+13,,"Villepinte","Rue de Villepinte",48.96316755011165,2.5123878278590865,0,
+14,,"Monceau ","Parc Monceau",48.88132429394468,2.3165967615088174,0,
+15,,"Villiers","rue Villiers ",48.88140510041144,2.316147050907411,0,
+16,,"Vincennes","Rue de Montreuil",48.84732387116057,2.433531596877892,0,
+17,,"Volontaires","25 rue des Volontaires", 48.84141844267774,2.307993649386661,0
+18,,"Voltaire ","Boulevard Voltaire ",48.85766372576006,2.3800362967955064,0,
+19,,"Wagram","Place Monseigneur Loutil ",48.883712476037346,2.3055577575143036,0,
+20,,"Danube","9 place Rhin et Danube ",48.88195101817822,2.3932606758573876,0,
+21,,"Torcy","Rue Léon Blum ",48.83959713753761,2.6545815811820037,0,
+22,,"Pasteur","Place Pasteur ",48.8630891350352,2.2868403784945937,0,
+23,,"Varenne","13 boulevard des Invalides ",48.85639306919846,2.3147543648102884,0,
+24,,"Villejuif ","Rue du Dauphin ",48.80376966328267,2.3639093063890435,0,
+25,,"République","Av de la République ",48.86741082883539,2.363587825558049,0,
+
+
+
+
+

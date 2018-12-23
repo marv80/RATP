@@ -1,0 +1,27 @@
+# This script reads a GPS track in CSV format and
+#  prints a list of coordinate pairs
+import csv
+
+# Set up input and output variables for the script
+test = open("data/test.txt", "r")
+
+# Set up CSV reader and process the header
+csvReader = csv.reader(test)
+header = csvReader.next()
+nameindex = header.index("name")
+adresseindex = header.index("adress")
+
+# Make an empty list
+coordList = []
+
+# Loop through the lines in the file and get each coordinate
+for row in csvReader:
+    if row[nameindex] == "marvin":
+        adress = row[adresseindex]
+
+# Print the coordonate list
+
+if adress != 0:
+    print(adress)
+else:
+    print("Pas d'adresse pour ce nom")

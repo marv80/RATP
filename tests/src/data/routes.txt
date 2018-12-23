@@ -1,0 +1,8 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+111,100,"s1","Line S1",,1,,FFFFFF,000000
+222,100,"s2","Line S2",,1,,F5F5DC,000000 
+333,100,"s3","Line S3",,1,,556B2F,000000
+444,100,"s4","Line S4",,1,,483D8B,000000
+555,100,"s5","Line S5",,1,,8B6914,000000
+
+ 
