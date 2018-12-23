@@ -18,6 +18,11 @@ class GTFS:
         self.gtfs_routes = list()
         self.gtfs_trips = list()
         self.gtfs_stopstimes = list()
+        self.read_stops()
+        self.read_routes()
+        self.read_trips()
+        self.get_trips()
+        self.get_stops()
 
     def read_stops(self):
         for index, row in self.data_stops.iterrows():
@@ -63,6 +68,19 @@ class GTFS:
                 for index, row in dfst.iterrows():
                     listestops.append(row[3])
                 for j in listestops:
+                            for k in self.gtfs_stops:
+                                if k.idstop == j:
+                                    k.sroutes.append(i)
+                                    i.rstops.append(k)
+
+    """def get_routes(self):
+        listeroutes = list()
+        for i in self.gtfs_stops:
+                dfst = self.data_stops_times.loc[self.data_stops_times['stop_id'] == i.idstop]
+                dfst = dfst.sort_values(by='departure_time')
+                for index, row in dfst.iterrows():
+                    listeroutes.append(row[3])
+                for j in listestops:
                     for index, row in self.data_stops.iterrows():
                         if j == row[0]:
                             sid = row[0]
@@ -71,7 +89,8 @@ class GTFS:
                             slat = row[4]
                             slong = row[5]
                             stop = Class.Stop(sid, sname, sadr, slat, slong)
-                            i.rstops.append(stop)
+                            i.rstops.append(stop)"""
+
 
     def read_trips(self):
         for index, row in self.data_trips.iterrows():
