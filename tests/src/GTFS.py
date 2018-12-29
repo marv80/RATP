@@ -6,7 +6,7 @@ class GTFS:
     def __init__(self):
         self.data_routes = pd.read_csv('data/routes.txt', sep=",", header=0)
         self.data_stops = pd.read_csv('data/stops.txt', sep=",", header=0)
-        self.data_agency = pd.read_csv('data/agency.txt', sep=",", header=0)
+        # self.data_agency = pd.read_csv('data/agency.txt', sep=",", header=0)
         self.data_calendar_dates = pd.read_csv('data/calendar_dates.txt', sep=",", header=0)
         self.data_calendar = pd.read_csv('data/calendar.txt', sep=",", header=0)
         self.data_stops_times = pd.read_csv('data/stop_times.txt', sep=",", header=0)

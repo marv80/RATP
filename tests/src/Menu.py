@@ -1,44 +1,49 @@
-## Text menu in Python
-import GTFS
-
-def print_menu():  ## Your menu design here
-    gtfs = GTFS.GTFS()
-    print (30 * "-", "MENU", 30 * "-")
-    print ("1. Display line ")
-    print ("2. Show Station ")
-    print ("3. A* intinerary")
-    print ("4. Menu Option 4")
-    print ("5. Exit")
-    print (67 * "-")
+import tkinter
+import Go
 
 
-loop = True
+app = tkinter.Tk()
+app.geometry("640x480")
+app.title("NAVECO menu")
+mainmenu = tkinter.Menu(app)
 
-while loop:  ## While loop which will keep going until loop = False
-    print_menu()  ## Displays menu
-    choice = input("Enter your choice [1-5]: ")
+w = tkinter.Label(app, text="Welcome to NavEco", font=("Helvetica", 16))
+w.pack()
 
-    if choice == 1:
-        print
-        "Menu 1 has been selected"
-        ## You can add your code or functions here
-    elif choice == 2:
-        print
-        "Menu 2 has been selected"
-        ## You can add your code or functions here
-    elif choice == 3:
-        print
-        "Menu 3 has been selected"
-        ## You can add your code or functions here
-    elif choice == 4:
-        print
-        "Menu 4 has been selected"
-        ## You can add your code or functions here
-    elif choice == 5:
-        print
-        "Menu 5 has been selected"
-        ## You can add your code or functions here
-        loop = False  # This will make the while loop to end as not value of loop is set to False
-    else:
-        # Any integer inputs other than values 1-5 we print an error message
-        print("Wrong option selection. Enter any key to try again..")
+L1 = tkinter.Label(app, text="Departure Station")
+L1.pack()
+ENT1 = tkinter.Entry(app, bd=5)
+ENT1.pack()
+E1 = tkinter.StringVar()
+E1 = ENT1.get()
+L2 = tkinter.Label(app, text="Arrival Station")
+L2.pack()
+ENT2 = tkinter.Entry(app, bd=5)
+ENT2.pack()
+E2=tkinter.StringVar()
+E2 = ENT2.get()
+
+def Shortest_Path(beg, en):
+    liste = Go.astar(beg, en)
+    t = tkinter.Text(app)
+    for x in liste:
+        t.insert(tkinter.END, x.nomstop + '\n')
+    t.pack()
+button1 = tkinter.Button(app, text = "Go", width=25, command= lambda :Shortest_Path(E1, E2))
+button1.pack()
+
+first_menu = tkinter.Menu(mainmenu, tearoff=0)
+first_menu.add_command(label="EXIT", command=app.quit)
+
+second_menu = tkinter.Menu(mainmenu, tearoff=0)
+second_menu.add_command(label="Find my route")
+
+third_menu = tkinter.Menu(mainmenu, tearoff=0)
+
+mainmenu.add_cascade(label=" Display lines", menu=first_menu)
+mainmenu.add_cascade(label=" Routes", menu=second_menu)
+mainmenu.add_cascade(label=" Display the RATP map", menu=third_menu)
+
+
+app.config(menu=mainmenu)
+app.mainloop()

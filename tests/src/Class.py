@@ -38,8 +38,7 @@ class Stop:
         self.longstop = longstop    # Longitude stop
         self.sroutes = list()   # Routes serving the stop
         self.stransfers = list()
-        self.eaa = {} # earliest arrival at the stop for a round k
-
+        self.actual_route = None
 
 class Route:
     def __init__(self, idroute, agencyid,rshortname, rname, rtype, rcolor, rtextcolor):
