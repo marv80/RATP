@@ -30,6 +30,8 @@ class GTFS:
         print("get trips done")
         self.get_stops()
         print("get stops done")
+       # self.get_transfers()
+        print("get tranfers done ")
 
     def read_stops(self):
         for index, row in self.data_stops.iterrows():
@@ -44,17 +46,18 @@ class GTFS:
     def read_routes(self):
         for index, row in self.data_routes.iterrows():
             rid = row[0]
-            agencyid = 0 #row[1]
-            rshortname = row[1] #row[2]
-            rlongname = row[2] #row[3]
-            rtype =  0 #row[5]
-            rcolor = 0 #row[6]
-            rtcolor = 0 #row[7]
+            agencyid = row[1]  # 0
+            rshortname = row[2]  # row[1]
+            rlongname = row[3]  # row[2]
+            rtype = row[5]  # 0
+            rcolor = row[6]  # 0
+            rtcolor = row[7]
             route = Class.Route(rid, agencyid, rshortname, rlongname, rtype, rcolor, rtcolor)
             self.gtfs_routes.append(route)
 
 
 # add the trips in different routes
+
     def get_trips(self):
         for i in self.gtfs_routes:
             df = self.data_trips.loc[self.data_trips['route_id'] == i.id]
@@ -70,16 +73,31 @@ class GTFS:
     def get_stops(self):
         listestops = list()
         for i in self.gtfs_routes:
-                 if  i.rtrips:
-                    dfst = self.data_stops_times.loc[self.data_stops_times['trip_id'] == i.rtrips[0].id]
-                    dfst = dfst.sort_values(by='departure_time')
-                    for index, row in dfst.iterrows():
-                        listestops.append(row[3])
-                    for j in listestops:
-                                for k in self.gtfs_stops:
-                                    if k.idstop == j:
-                                        k.sroutes.append(i)
-                                        i.rstops.append(k)
+            if i.rtrips:
+                dfst = self.data_stops_times.loc[self.data_stops_times['trip_id'] == i.rtrips[0].id]
+                dfst = dfst.sort_values(by='stop_sequence')
+                listestops[:] = []
+                for index, row in dfst.iterrows():
+                    listestops.append(row[3])
+                for j in listestops:
+                            for k in self.gtfs_stops:
+                                if k.idstop == j:
+                                    k.sroutes.append(i)
+                                    i.rstops.append(k)
+
+    def get_transfers(self):
+        listetransfers = list()
+        for stops in self.gtfs_stops:
+            df_transfers_from = self.data_transfers.loc[self.data_transfers['from_stop_id'] == stops.idstop]
+            df_transfers_to = self.data_transfers.loc[self.data_transfers['to_stop_id'] == stops.idstop]
+            for index, row in df_transfers_from.iterrows():
+                listetransfers.append(row[1])
+            for index, row in df_transfers_to.iterrows():
+                listetransfers.append(row[0])
+            for t in listetransfers:
+                for tstop in self.gtfs_stops:
+                    if tstop.idstop == t:
+                        stops.stransfers.append(tstop)
 
     def read_trips(self):
         for index, row in self.data_trips.iterrows():

@@ -14,7 +14,18 @@ class Timetable:
             stop = Stop(id, name, adr, lat, long)
             self.ttstops.append(stop)
 
-# def listroutes(self, data_routes, data_stops):
+
+class Node:
+    def __init__(self, parent=None, position=None):
+        self.parent = parent
+        self.position = position
+
+        self.g = 0
+        self.h = 0
+        self.f = 0
+
+    def __eq__(self, other):
+        return self.position == other.position
 
 
 class Stop:
@@ -26,7 +37,7 @@ class Stop:
         self.latstop = latstop  # Latitude stop
         self.longstop = longstop    # Longitude stop
         self.sroutes = list()   # Routes serving the stop
-        self.stransferts = list()
+        self.stransfers = list()
         self.eaa = {} # earliest arrival at the stop for a round k
 
 
@@ -42,8 +53,6 @@ class Route:
         self.rstops = list()
         self.rtrips = list()
         self.data_trips = 0
-
-   # def Getstops(self):
 
 
 class Trip:
