@@ -24,29 +24,36 @@ def lookaround(stop, gtfs):
                 s_around.append(stop)
     return s_around
 
+def strtostop(str, gtfs):
+    depart = []
+    for s in gtfs.gtfs_stops:
+        if s.nomstop == str:  # & ((not s.sroutes) == False):
+            depart.append(s)
+    return depart
 
 def astar(in_gtfs):
 
     gtfs = in_gtfs
-    start = input("Enter your departure station: ")
     depart = []
     arrive = []
     dist = float("inf")
-    for s in gtfs.gtfs_stops:
-        if s.nomstop == start:  # & ((not s.sroutes) == False):
-            depart.append(s)
+
+    while(not depart):
+        start = input("Enter your departure station: ")
+        depart = strtostop(start, gtfs)
 
     sstop = 0
-    end = input("enter your arrival station: ")
-    for g in gtfs.gtfs_stops:
-        if g.nomstop == end:
-            sstop = g
-            arrive.append(g)
+
+    while (not arrive):
+        end = input("Enter your arrival station: ")
+        arrive = strtostop(end, gtfs)
+    sstop = arrive[0]
 
     for s in depart:
         for r in s.sroutes:
             ind = r.rstops.index(s)
-            testdist = calcdist(r.rstops[ind+1], sstop)
+            if ind+2 <= len(r.rstops):
+                testdist = calcdist(r.rstops[ind+1], sstop)
             if testdist < dist:
                 dist = testdist
                 sstart = s
@@ -56,8 +63,13 @@ def astar(in_gtfs):
     distarr = GPS.distanceGPS(sstart.latstop, sstart.longstop, sstop.latstop, sstop.longstop)
     print(distarr)
 
-    start_node = Class.Node(None, sstart)
-    start_node.g = start_node.h = start_node.f = 0
+    starting_nodes=[]
+    for s in depart:
+
+            start_node = Class.Node(None, sstart)
+            start_node.g = start_node.h = start_node.f = 0
+            starting_nodes.append(start_node)
+
     end_node = Class.Node(None, sstop)
     end_node.g = end_node.h = end_node.f = 0
 
@@ -66,13 +78,15 @@ def astar(in_gtfs):
     closed_list = []
 
     # Add the start node
-    open_list.append(start_node)
+    #open_list.append(start_node)
+    open_list = starting_nodes
 
     # Loop until you find the end
     while len(open_list) > 0:
 
         # Get the current node
         current_node = open_list[0]
+        print(current_node.position.nomstop)
         current_index = 0
         for index, item in enumerate(open_list):
             if item.f < current_node.f:
